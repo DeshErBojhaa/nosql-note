@@ -11,8 +11,7 @@ This can be achieved in 2 ways
 - Use two phase commit or Paxos
 
 ### Eventual Consistancy:
-User may see different data in different time. But all the nodes will come to a
-point where it shows the latest completed write data.
+User may see different data in different time. But all the nodes will come to a point where it shows the latest completed write data.
 
 ### Read Your Own Write (RYOW) Consistance:
 Client sees his updates immediately after they hace issued an successful update. Regardless of which node client write and read from. Updates by other clients my not be visible to him instantly.
@@ -26,3 +25,19 @@ If one client reads version x and subsequently writes version y, any client read
 ### Monotonic Read Consistancy:
 Client will see updated data monotonicly.
 
+carter_boystown_d51*56H_##vx1-/)(a.rar
+
+# Versioning of Data in Distributed System:
+Data versioning is important for optimistic concurrency control. Larest data version helpd database to reach to eventual consistancy.
+
+### Timestamp:
+Obvious solution, but it's difficult to have a consistent `clock` across the system.
+
+### Optimistic Locking:
+A unique counter will be saved with each piece of data. When a data is to update, client have to provide the counter number it seeks to update.
+This mechanism does not work well when a lot of servers are sponing and destroying.
+
+### Multiversioning Storage:
+In this scheme, for a given row, multiple version can exist concurrently. This provides optimistic concurrency control with compare and swap mechanism. 
+
+### Vectior Clocks:
