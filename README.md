@@ -1,3 +1,10 @@
+## Topics
+- Consistency
+- Partitioning
+- Storage Layout
+- Query Models
+- Distributed Data Processing via MapReduce
+
 # ACID vs BASE
 BASE -> Basically Available, Soft-state, Eventual consistency
 
@@ -25,8 +32,6 @@ If one client reads version x and subsequently writes version y, any client read
 ### Monotonic Read Consistancy:
 Client will see updated data monotonicly.
 
-carter_boystown_d51*56H_##vx1-/)(a.rar
-
 # Versioning of Data in Distributed System:
 Data versioning is important for optimistic concurrency control. Larest data version helpd database to reach to eventual consistancy.
 
@@ -41,3 +46,12 @@ This mechanism does not work well when a lot of servers are sponing and destroyi
 In this scheme, for a given row, multiple version can exist concurrently. This provides optimistic concurrency control with compare and swap mechanism. 
 
 ### Vectior Clocks:
+
+
+
+## 3.2 Partitioning
+When data is no longer persostable in one machine, we need to think about partitioning it. Depending on _dynamicity_(how often and dynamically storage joins and leaves the system), there are different approaches for this issue.
+- Memory caches
+- Clustering
+- Seperating Reads from Writes
+- Sharding
