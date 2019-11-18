@@ -51,13 +51,13 @@ In this scheme, for a given row, multiple version can exist concurrently. This p
 
 ## 3.2 Partitioning
 When data is no longer persostable in one machine, we need to think about partitioning it. Partitioning (and thus replicating) also helps in scalability such as load balancing and reliability. Depending on _dynamicity_(how often and dynamically storage joins and leaves the system), there are different approaches for this issue.
-- Memory caches [Replicating]
-- Clustering [Partitioning]
-- Seperating Reads from Writes
+- **Memory caches** [Replicating]
+- **Clustering** [Partitioning]
+- **Seperating Reads from Writes** <br />
     Means there are dedicated servers for write operations. Data can be lost if master fails before replication data to slaves. 
     Does not work if strict consistency is required. Works well when read/write ratio is high (more read less write). 
     Changes can be propageted from master to slave by stare transfer or by operation transfer.
-- Sharding
+- **Sharding** <br />
     Sharding means distributing data in servers in such a way that every server have similar load. Also data requested and updated together     resids on the same server.
     Each shard can have multiple replicas for fault taulance and load balancing.
     To get the partition of the shard, we use `partition = hash(o) mod n`
