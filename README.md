@@ -49,7 +49,7 @@ In this scheme, for a given row, multiple version can exist concurrently. This p
 
 
 
-## 3.2 Partitioning
+## Partitioning
 When data is no longer persostable in one machine, we need to think about partitioning it. Partitioning (and thus replicating) also helps in scalability such as load balancing and reliability. Depending on _dynamicity_(how often and dynamically storage joins and leaves the system), there are different approaches for this issue.
 - **Memory caches** [Replicating]
 - **Clustering** [Partitioning]
@@ -65,3 +65,14 @@ When data is no longer persostable in one machine, we need to think about partit
     But in this scheme, if one node is added or removed, we have to calculare all the hash values again (because partition depends on `mod n`).
     To solve this problem, enters the **consistent hashing**
 
+##  - Partitioning
+###   - Consistent Hashing :point_left:
+###   - Read and Write Operation on Partitioned Data
+Think of some people sitting on a round table. And foods are placed randomly on the edge of the table.
+Each person takes any food that served to his right but not taking another person's food. That's consistent hashing.
+Think of eaters as nodes and foods are incoming data. Now, to ensure each eater gets roughly same ammount of food, we can have vertual clone of each eater distributed on the edge of the table.
+
+##  - Partitioning
+###   - Consistent Hashing
+###   - Read and Write Operation on Partitioned Data :point_left:
+###   - Memebership Changed
