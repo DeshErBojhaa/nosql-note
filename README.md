@@ -63,5 +63,5 @@ When data is no longer persostable in one machine, we need to think about partit
     To get the partition of the shard, we use `partition = hash(o) mod n`
     Where `o` is the object and `n` is the number of nodes.
     But in this scheme, if one node is added or removed, we have to calculare all the hash values again (because partition depends on `mod n`).
-    To solve this problem, enters the *consistent hashing* 
+    To solve this problem, enters the **consistent hashing**
 
