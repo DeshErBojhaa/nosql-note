@@ -103,9 +103,9 @@ of different columns.
 3. Columnar Storage layout with Locality Groups
 4. Log Structured Merge Tree (LSM-tree)
 
-Id   | Pros | Cons | Usages 
----- | ---- | ---- | -------
-1. | Comapact, Whole dataset can be read/write with a single IO, Good locality of access of different columns. | Operations on columns are expensive | When reading whole row is important 
-2. | Operations on columns are faster | Operations on row are expensive | Statistical models where column operations are important 
-3. | Good segregation of physical storage. | probabilistic, not guranteed to work all the time | Google big table
-4. | Can support diffrent data types; Practical; efficient | Need to merge frequently, otherwise aggragration results will be wrong | Elasticsearch 
+| Id   | Pros | Cons | Usages |
+| ---- | ---- | ---- | ------- |
+| 1 | Comapact, Whole dataset can be read/write with a single IO, Good locality of access of different columns. | Operations on columns are expensive | When reading whole row is important |
+| 2 | Operations on columns are faster | Operations on row are expensive |  Statistical models where column operations are important |
+| 3 | Good segregation of physical storage. | probabilistic, not guranteed to work all the time | Google big table |
+| 4 | Can support diffrent data types; Practical; efficient | Need to merge frequently, otherwise aggragration results will be wrong | Elasticsearch |
