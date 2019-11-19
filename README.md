@@ -63,17 +63,49 @@ When data is no longer persostable in one machine, we need to think about partit
     To get the partition of the shard, we use `partition = hash(o) mod n`
     Where `o` is the object and `n` is the number of nodes.
     But in this scheme, if one node is added or removed, we have to calculare all the hash values again (because partition depends on `mod n`).
-    To solve this problem, enters the **consistent hashing**
+    To solve this problem, enters the **consistent hashing**. <br />
 
-- **Partitioning**
-  - **Consistent Hashing** :point_left:
-  - **Read and Write Operation on Partitioned Data**
+### Consistent Hashing
 Think of some people sitting on a round table. And foods are placed randomly on the edge of the table.
 Each person takes any food that served to his right but not taking another person's food. That's consistent hashing.
-Think of eaters as nodes and foods are incoming data. Now, to ensure each eater gets roughly same ammount of food, we can have vertual clone of each eater distributed on the edge of the table.
+Think of eaters as nodes and foods are incoming data. Now, to ensure each eater gets roughly same ammount of food, we can have vertual clone of each eater distributed on the edge of the table. <br />
 
-- **Partitioning**
-  - **Consistent Hashing**
-  - **Read and Write Operation on Partitioned Data** :point_left:
-  - **Memebership Changed**
+### Read Write Operation on Partitioned Data
+Three numbers are important
+**N** Number of replicas.
+**R** Number of machines contained in read operation.
+**W** Number of machines that have to be blocked in write operation.
+In interest of *Read your own write* consistency, the following relation between these numbers are necessary.
+                `R+W > N`
+This scheme is neither immediately consistent nor isolated.
+- If write operation is successful, that means, at least W nodes have executed the opetation.
+- If write opetation fails, that means W nodes failed to execute the operation.
+  - If at least one node is successfully executed, we can have eventual consistency
+  - If no node is able to execute the write operation, client have to re issueing the write request to achieve consistency.
 
+### Memebership Changes
+Node canbe added into the system, or can leave from the system.
+**If node joins**
+1. The newly arriving node announces its presence and its identifier to adjacent nodes or to all nodes
+via broadcast.
+2. The neighbors of the joining node react by adjusting their object and replica ownerships.
+3. The joining node copies datasets it is now responsible for from its neighbours. This can be done in bulk and also asynchronously.
+4. If, in step 1, the membership change has not been broadcasted to all nodes, the joining node is now announcing its arrival.
+
+**If node leaves**
+1. System have to detect if a node is ubavailable.
+2. Neighboring nodes have to share data among themselves.
+
+
+## Storage Layout
+- Row-Based storage layout
+- Columnar Storage layout
+- Columnar Storage layout with Locality Groups
+- Log Structured Merge Tree (LSM-tree)
+
+Scheme Name | Pros | Cons | Usages
+------------|------|------|-------
+Row Based | Comapact, Whole dataset can be read/write | Operations on |
+          | with a single IO, Good locality of access | columns are   |
+          | of different columns.                     | expensive     |
+-----------------------------------------------------------------------
