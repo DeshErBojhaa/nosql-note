@@ -105,7 +105,5 @@ via broadcast.
 
 Scheme Name | Pros | Cons | Usages
 ------------|------|------|-------
-Row Based | Comapact, Whole dataset can be read/write | Operations on |
-          | with a single IO, Good locality of access | columns are   |
-          | of different columns.                     | expensive     |
+Row Based | Comapact, Whole dataset can be read/write with a single IO, Good locality of access of different columns.| Operations on columns are expensive|
 -----------------------------------------------------------------------
