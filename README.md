@@ -109,3 +109,6 @@ of different columns.
 | 2 | Operations on columns are faster | Operations on row are expensive |  Statistical models where column operations are important |
 | 3 | Good segregation of physical storage. | probabilistic, not guranteed to work all the time | Google big table |
 | 4 | Can support diffrent data types; Practical; efficient | Need to merge frequently, otherwise aggragration results will be wrong | Elasticsearch |
+
+## Query Model
+## Distributed Data Processing via MapReduce
