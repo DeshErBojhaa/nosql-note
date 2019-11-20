@@ -33,7 +33,7 @@ For these things NoSQL is better match than RDBMS.
 
 | Category | Matching Database |
 | :--- | :--- |
-| Key value store | Redis <br> Voldemort <br> Riak |
+| :old_key: - :spiral_notepad: :department_store: | Redis <br> Voldemort <br> Riak |
 | Document Store | MongoDB <br> Elasticsearch <br> CouchDB |
 | Extensible Record Store | Bigtable <br> HBase <br> Cassandra |
 
@@ -42,11 +42,20 @@ For these things NoSQL is better match than RDBMS.
 | Term | Matching Databases |
 | :--- | :--- |
 | :old_key: - :spiral_notepad: cache | Memcached <br> Velocity <br> Repcached |
-| Key-Value store | keyspace <br> Flare |
+| :old_key: - :spiral_notepad: :department_store: | keyspace <br> Flare |
 | Eventually Consistent key value store | Dynamo <br> Voldemort <br> Mo8onDb |
-| Ordered key value store | Light Cloud <br> MemcacheDB |
+| Ordered :old_key: - :spiral_notepad: :department_store: | Light Cloud <br> MemcacheDB |
 | Data structure server | Redis |
 | Tuple Store | Apache river |
 | Object Database | ZopeDB |
 | Document Store | CoucnDB <br> Mongo <br> Elasticsearch |
-| Wide Column Store | Bigtable <br> Hbase <br> Cassandra <br> KDI |
+| Wide Column :department_store: | Bigtable <br> Hbase <br> Cassandra <br> KDI |
+
+**Comparison between different databases**
+| Type | Performance | Scalability | Flexibility | Complexity | Functionality |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| :old_key: - :spiral_notepad: :department_store: | :arrow_up: | :arrow_up: | :arrow_up: | none | variable (none) |
+| Column :department_store: | :arrow_up: | :arrow_up: | :heavy_minus_sign: | :arrow_down: | minimal |
+| Document :department_store: | :arrow_up: | variable( :arrow_up: ) | :arrow_up: | :arrow_down: | variable ( :arrow_down: ) |
+| Graph Database | Variable | Variable | :arrow_up: | :arrow_up: | graph theory |
+| Relational Database | Variable | Variable | :arrow_down: | :heavy_minus_sign: | relational algebra |
