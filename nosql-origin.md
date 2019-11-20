@@ -52,6 +52,7 @@ For these things NoSQL is better match than RDBMS.
 | Wide Column :department_store: | Bigtable <br> Hbase <br> Cassandra <br> KDI |
 
 **Comparison between different databases**
+
 | Type | Performance | Scalability | Flexibility | Complexity | Functionality |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | :old_key: - :spiral_notepad: :department_store: | :arrow_up: | :arrow_up: | :arrow_up: | none | variable (none) |
