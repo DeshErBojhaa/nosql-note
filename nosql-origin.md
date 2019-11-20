@@ -43,7 +43,7 @@ For these things NoSQL is better match than RDBMS.
 | :--- | :--- |
 | :old_key: - :spiral_notepad: cache | Memcached <br> Velocity <br> Repcached |
 | :old_key: - :spiral_notepad: :department_store: | keyspace <br> Flare |
-| Eventually Consistent key value store | Dynamo <br> Voldemort <br> Mo8onDb |
+| Eventually Consistent :old_key: - :spiral_notepad: :department_store: | Dynamo <br> Voldemort <br> Mo8onDb |
 | Ordered :old_key: - :spiral_notepad: :department_store: | Light Cloud <br> MemcacheDB |
 | Data structure server | Redis |
 | Tuple Store | Apache river |
@@ -54,9 +54,35 @@ For these things NoSQL is better match than RDBMS.
 **Comparison between different databases**
 
 | Type | Performance | Scalability | Flexibility | Complexity | Functionality |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| :old_key: - :spiral_notepad: :department_store: | :arrow_up: | :arrow_up: | :arrow_up: | none | variable (none) |
-| Column :department_store: | :arrow_up: | :arrow_up: | :heavy_minus_sign: | :arrow_down: | minimal |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| :old_key: - :spiral_notepad: :department_store: | :arrow_up: | :arrow_up: | :arrow_up: | :negative_squared_cross_mark: | variable (:negative_squared_cross_mark:) |
+| Column :department_store: | :arrow_up: | :arrow_up: | moderate | :arrow_down: | minimal |
 | Document :department_store: | :arrow_up: | variable( :arrow_up: ) | :arrow_up: | :arrow_down: | variable ( :arrow_down: ) |
 | Graph Database | Variable | Variable | :arrow_up: | :arrow_up: | graph theory |
-| Relational Database | Variable | Variable | :arrow_down: | :heavy_minus_sign: | relational algebra |
+| Relational Database | Variable | Variable | :arrow_down: | moderate | relational algebra |
+
+### Comparison by Scalability, Data and Query Model, Persistance Design
+**Scalability**
+Read scalability is trivial. Write scalability is what matters. In that perspective, we can categorize NoSQL data bases in 2 main categories.
+- Support for multiple datacenter
+- Possibility to add machine live on an existing cluster.
+
+Most modern NoSQL data bases support those features out of the box.
+
+**Data and Query Model**
+
+**Persistence Design**
+
+| Database | Persostence design |
+| :--- | :--- |
+| Cassandra | Memtable / SSTable |
+| HBase | Memtable/SSTable on HDFS |
+| Elasticseach | Mostly Memtable/SSTable |
+| CouchDB | Append-only B-Tree |
+| MongoDB | B-Tree |
+| Neo4j | On-disk linked list |
+| Redis | In-memory with background snapshot |
+
+**Memtable/SSTable scheme**
+Write operations are buffered in memory in a *Memtable*. After they are written to a append only commit log to ensure durability. After a certain amount of time, the memetable flushed into the disk as a whole.
+Elasticsearch does something similar with theie segments.
