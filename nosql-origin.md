@@ -55,11 +55,11 @@ For these things NoSQL is better match than RDBMS.
 
 | Type | Performance | Scalability | Flexibility | Complexity | Functionality |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| :old_key: - :spiral_notepad: :department_store: | :arrow_up: | :arrow_up: | :arrow_up: | :negative_squared_cross_mark: | variable (:negative_squared_cross_mark:) |
+| :old_key: - :spiral_notepad: :department_store: | :arrow_up: | :arrow_up: | :arrow_up: | :negative_squared_cross_mark: | :wavy_dash:	 (:negative_squared_cross_mark:) |
 | Column :department_store: | :arrow_up: | :arrow_up: | moderate | :arrow_down: | minimal |
-| Document :department_store: | :arrow_up: | variable( :arrow_up: ) | :arrow_up: | :arrow_down: | variable ( :arrow_down: ) |
-| Graph Database | Variable | Variable | :arrow_up: | :arrow_up: | graph theory |
-| Relational Database | Variable | Variable | :arrow_down: | moderate | relational algebra |
+| Document :department_store: | :arrow_up: | :wavy_dash:	( :arrow_up: ) | :arrow_up: | :arrow_down: | :wavy_dash:	 ( :arrow_down: ) |
+| Graph Database | :wavy_dash:	 | :wavy_dash:	 | :arrow_up: | :arrow_up: | graph theory |
+| Relational Database | :wavy_dash:	 | :wavy_dash:	 | :arrow_down: | moderate | relational algebra |
 
 ### Comparison by Scalability, Data and Query Model, Persistance Design
 **Scalability**
