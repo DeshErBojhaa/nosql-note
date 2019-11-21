@@ -11,7 +11,7 @@ The term was picked up again in 2009 and used for conference for non relationl d
 - Modern applications often chosing performance over reliability.
 - Requirements for cloud computing. Cloud want basically these 3 features
   - Data warehouse for large scale map/reduce jobs
-  - Simple key/value store
+  - Simple key/value :department_store:
   - More features than key/value (Document database for example) <br />
 For these things NoSQL is better match than RDBMS.
 - Less overhead and memory footprint than RDBMS.
@@ -34,8 +34,8 @@ For these things NoSQL is better match than RDBMS.
 | Category | Matching Database |
 | :--- | :--- |
 | :old_key: - :spiral_notepad: :department_store: | Redis <br> Voldemort <br> Riak |
-| Document Store | MongoDB <br> Elasticsearch <br> CouchDB |
-| Extensible Record Store | Bigtable <br> HBase <br> Cassandra |
+| Document :department_store: | MongoDB <br> Elasticsearch <br> CouchDB |
+| Extensible Record :department_store: | Bigtable <br> HBase <br> Cassandra |
 
 **More find grainde caregorization**
 
@@ -46,9 +46,9 @@ For these things NoSQL is better match than RDBMS.
 | Eventually Consistent :old_key: - :spiral_notepad: :department_store: | Dynamo <br> Voldemort <br> Mo8onDb |
 | Ordered :old_key: - :spiral_notepad: :department_store: | Light Cloud <br> MemcacheDB |
 | Data structure server | Redis |
-| Tuple Store | Apache river |
+| Tuple :department_store: | Apache river |
 | Object Database | ZopeDB |
-| Document Store | CoucnDB <br> Mongo <br> Elasticsearch |
+| Document :department_store: | CoucnDB <br> Mongo <br> Elasticsearch |
 | Wide Column :department_store: | Bigtable <br> Hbase <br> Cassandra <br> KDI |
 
 **Comparison between different databases**
