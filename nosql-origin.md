@@ -86,4 +86,3 @@ Most modern NoSQL data bases support those features out of the box.
 **Memtable/SSTable scheme**
 Write operations are buffered in memory in a *Memtable*. After they are written to a append only commit log to ensure durability. After a certain amount of time, the memetable flushed into the disk as a whole.
 Elasticsearch does something similar with theie segments.
-.
