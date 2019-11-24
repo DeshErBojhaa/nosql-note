@@ -5,7 +5,18 @@
 - Query Models
 - Distributed Data Processing via MapReduce
 
-# ACID vs BASE
+# Consistency
+
+### The CAP theorem
+You can get only two of *consistency*, *Availability* and *Partition Tolerance*
+
+| Choice | Traits | Examples |
+| :--- | :--- | :--- |
+| Consistency + Availability (Forfit Partitions) | 2-phase commit cache-validation protocols | Single-site database, Cluster database, LDAP, xFS file system |
+| Consistency + Partition tolerance | Pessimistic locking. Make minority partitions unavaliable | Distributed database, Distributed locking, Majority protocols |
+| Availability + Partition tolerance | expirations/leases, conflict resolution, optimistic | Coda, Web caching, DNS |
+
+### ACID vs BASE
 BASE -> Basically Available, Soft-state, Eventual consistency
 
 ## SOME CONSISTANCY TYPES
