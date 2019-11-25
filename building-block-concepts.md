@@ -19,6 +19,16 @@ You can get only two of *consistency*, *Availability* and *Partition Tolerance*
 ### ACID vs BASE
 BASE -> Basically Available, Soft-state, Eventual consistency
 
+| ACID | BASE |
+| :--- | :--- |
+| Strong consistency | Weak consistency - stale data ok |
+| Isolation | Availability first |
+| Focus on `commit` | Best effort |
+| Conservative (pessimistic) | Aggresive (optimistic) |
+| Difficult evolution (e.g schema) | Easier evolution |
+|  | Approximate ans ok |
+|  | Simpler! Faster! |
+
 ## SOME CONSISTANCY TYPES
 
 ### Strict Consistancy: 
@@ -57,7 +67,10 @@ This mechanism does not work well when a lot of servers are sponing and destroyi
 In this scheme, for a given row, multiple version can exist concurrently. This provides optimistic concurrency control with compare and swap mechanism. 
 
 ### Vectior Clocks:
-
+[More about vector clock](https://www.youtube.com/watch?v=jD4ECsieFbE)
+**Advantages:**
+- No dependence on synchronized clocks.
+- No need to keep multiple version of data in nodes.
 
 
 ## Partitioning
