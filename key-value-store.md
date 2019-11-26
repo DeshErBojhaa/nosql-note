@@ -27,5 +27,17 @@ Dynamo DB uses consistent hashing. But raw consistent hashing has 2 main problem
 To solve these two problems, Dynamo DB uses one or more virtual nodes for each real node. The number of virtual nodes is proportional to the physical ability of that node.
 
 #### Replication
-Dynamo DB let users to configure the *replication factor* (default being 3). That menas keys and values of one node is replicated to the next 3 nodes in clockwise order.
+Dynamo DB let users to configure the *replication factor* (default being 3). That menas :old_key:s and values of one node is replicated to the next 3 nodes in clockwise order.
+
+#### Execution of GET and PUT operations
+Dynamo DB allows any node in the cluster to accept *read* or *write* request for any :old_key:. All nodes knows which node should take main responsibility for any incoming request.
+
+To provide a consistent view to the client, Dynamo DB applies a quorum like consistency. For this quorum like system to work perfectly, the following condition must hold true.
+                `R + W > N`
+Where `R` is the least number of nodes to return a read request.
+And `W` is the least numbrer of nodes to satisfy a write request.
+
+Upon write requests the first answering node on the preference list (called coordinator in Dynamo) creates a new vector clock for the new version and writes it locally. Following this procedure, the same node replicates the new version to other storage hosts responsible for the written data item (the next top `N` storage hosts on the preference list). The write request is considered successful if **at least** `W − 1` of these hosts respond to this update.
+
+Once a storage host receives a read request it will ask the `N` top storage hosts on the preference list for the requested data item and waits for `R − 1` to respond. **If these nodes reply with different versions that are in conflict (observable by vector-clock reasoning), it will return concurrent versions to the requesting client.**
 

@@ -17,7 +17,7 @@ You can get only two of *consistency*, *Availability* and *Partition Tolerance*
 | Availability + Partition tolerance | expirations/leases, conflict resolution, optimistic | Coda, Web caching, DNS |
 
 ### ACID vs BASE
-BASE -> Basically Available, Soft-state, Eventual consistency
+`BASE -> Basically Available, Soft-state, Eventual consistency`
 
 | ACID | BASE |
 | :--- | :--- |
