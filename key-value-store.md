@@ -1,7 +1,7 @@
-# Key-Value Store
+# :old_key:-Value Store
 - Scalability over consistency
 - No complex queries (no joins and aggregrations)
-- Usually there is a upper bound in key length
+- Usually there is a upper bound in :old_key: length
 
 ## AWS Dynamo DB
 #### Concepts applied at dynamo DB
