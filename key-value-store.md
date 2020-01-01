@@ -10,7 +10,9 @@
 - Every node has same responsibility. No distinguished nodes have special roles.
 
 ### Dynamo DB system design
-**Table** AWS dynamo summary of techniques
+**Table** AWS dynamo summary of techniques </br>
+
+
 | Problem | Technique | Advantages |
 | :--- | :--- | :--- |
 | Partitioning | Consistent hashing | Incremental Scalability |
@@ -18,6 +20,7 @@
 | Handling temporary failures | Sloppy Quorum abd hinted handoff | Provides high availability and durability despite some of the replica not available |
 | Recovering from permanent failure | Anti-entropy using Merkle tree | Synchronizes divergent replicas in the background |
 | Memnership and failure detection | Gossip based membership protocol and failure detection | Prevents symmerty and avoids having centralized registry for storing membership and node liveness information |
+
 
 #### Partition Algorithm
 Dynamo DB uses consistent hashing. But raw consistent hashing has 2 main problems
