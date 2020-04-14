@@ -1,5 +1,5 @@
 # :old_key:-Value Store
-- Scalability over consistency
+- Scalability over consistency. Values are just blobs that are saved against keys. No structure in saved values.
 - No complex queries (no joins and aggregrations)
 - Usually there is a upper bound in :old_key: length
 
@@ -17,7 +17,7 @@
 | :--- | :--- | :--- |
 | Partitioning | Consistent hashing | Incremental Scalability |
 | High availability for writes | Vector clocks with reconsiliations during reads | Version size is decoupled from update rates |
-| Handling temporary failures | Sloppy Quorum abd hinted handoff | Provides high availability and durability despite some of the replica not available |
+| Handling temporary failures | Sloppy Quorum and hinted handoff | Provides high availability and durability despite some of the replica not available |
 | Recovering from permanent failure | Anti-entropy using Merkle tree | Synchronizes divergent replicas in the background |
 | Memnership and failure detection | Gossip based membership protocol and failure detection | Prevents symmerty and avoids having centralized registry for storing membership and node liveness information |
 
