@@ -2,6 +2,28 @@
 The term **NoSQL** first used in 1998 for a relational database that does not use SQL.
 The term was picked up again in 2009 and used for conference for non relationl databases.
 
+### Things to consider choosing a database
+Choosing database is no simple task. Specially at the early stage of the project when requirements are not
+well understood. But if we analyze what little requirements we have, we can mitigare the pain of choosing a wrong database.
+
+Things to Consider When Choosign a New DB
+| Topic | Description |
+| :--- | :--- |
+| Data type/ Data structure | If data is highly structured or not. How often data are updating |
+| Data Volume | Do we need horizontal of vertical scalability? How fast we need to scale up. |
+| Write Frequency | If the write requests are append only? What is the percentage of write queries are update requests. |
+| Read Frequency | What kinnd of queries we are doing? Range queries based on time? Lots of aggregration? Adhoc queries? Very structured queries? |
+| Data Consistency | ACID vs BASE |
+| Hosting | Self, Cloud, DB as service |
+| Cost | :moneybag: |
+| Integration Constraints| How easy it's for your infra and devs to start with this DB. How much resource available online. |
+
+### Problems With Relational DB
+- It's too structured. if you don't knnow the structure of the data precisely up front or the data is unstructured or semi
+structured, this may cause problem.
+- Requires complicated ETL process.
+- Pessimistic concurrency control leads to often row locking. Which can block read (or write) operations for undeterministic time.
+
 ### Why Use NoSQL
 - Features and strict ACID properties are not always needed for real applications.
 - High Throughput
@@ -48,7 +70,7 @@ For these things NoSQL is better match than RDBMS.
 | Data structure server | Redis |
 | Tuple :department_store: | Apache river |
 | Object Database | ZopeDB |
-| Document :department_store: | CoucnDB <br> Mongo <br> Elasticsearch |
+| Document :department_store: | CoucnDB <br> Mongo <br> Elasticsearch (it not quite a documet store, it's more like a seacrch engine that is optimized for full text searching) |
 | Wide Column :department_store: | Bigtable <br> Hbase <br> Cassandra <br> KDI |
 
 **Comparison between different databases**
